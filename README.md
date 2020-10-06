@@ -1,4 +1,4 @@
-# Dpring Webflux Demo App
+# Spring Webflux Demo App
 
 Spring webflux app to call and collect user data from github open API using WebClient.
 
