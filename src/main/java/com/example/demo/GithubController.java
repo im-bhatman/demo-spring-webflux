@@ -18,8 +18,8 @@ public class GithubController {
 
     @GetMapping("/{orgName}")
     public Flux<User> getOrgUserDetails(@PathVariable String orgName) {
-        Flux<Member> members = githubWebClient.getOrgMembers(orgName);
-        Flux<User> users = members.flatMap(member -> githubWebClient.getUserDetails(member.getLogin()));
-        return users;
+        return githubWebClient
+            .getOrgMembers(orgName)
+            .flatMap(member -> githubWebClient.getUserDetails(member.getLogin()));
     }
 }
